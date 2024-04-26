@@ -1,30 +1,18 @@
-# Gradle files
-.gradle/
+# OS X randomness
+.DS_Store
+
+# build products
 build/
-
-# Local configuration file (sdk path, etc)
-local.properties
-
-# Log/OS Files
-*.log
-
-# Android Studio generated files and folders
-captures/
-.externalNativeBuild/
-.cxx/
-*.apk
-output.json
+out/
 
 # IntelliJ
-*.iml
 .idea/
+*.iml
 
-# Keystore files
-*.jks
-*.keystore
+# Vim swap files
+.*.sw*
 
-# Google Services (e.g. APIs or Firebase)
-google-services.json
-
-# Android Profiling
-*.hprof
+# gradle
+.gradle/
+.gradletasknamecache
+local.properties
