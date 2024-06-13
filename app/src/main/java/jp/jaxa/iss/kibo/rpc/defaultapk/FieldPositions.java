@@ -1,24 +1,21 @@
 package jp.jaxa.iss.kibo.rpc.defaultapk;
 
+import java.util.Arrays;
+import java.util.List;
+
 import gov.nasa.arc.astrobee.types.Point;
 
-public enum FieldChickens {
-
-    KOZ11(10.56, -9.475, 4.62),
-    KOZ12(11.235, -9.295, 5.295),
-    KOZ21(10.475, -8.295, 5.295),
-    KOZ22(11.235, -8.295, 4.62),
-    KOZ31(10.56, -7.195, 4.62),
-    KOZ32(11.235, -7.195, 5.295);
-
+public class FieldPositions {
     private final Point point;
 
-    FieldChickens(double x, double y, double z) {
+    FieldPositions(double x, double y, double z) {
         this.point = new Point(x, y, z);
     }
 
-    public Point get() {
-        return this.point;
+    public Point get() { return this.point; }
+
+    public Point shift(double x, double y, double z) {
+        return new Point(this.point.getX() + x, this.point.getY() + y, this.point.getZ() + z);
     }
 
     public double distanceTo(Point point) {
