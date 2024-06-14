@@ -3,3 +3,6 @@ Team Play Chicken In Space: Kibo-RPC changelog
 v0.0.1-beta 20240613
 Added TrajectoryConstructor, able to move to target from astronaut
 Just make Astrobee operational, don't have too many expectations :)
+
+v0.0.2-beta 20240614
+Fixed stupid bug :P

@@ -27,7 +27,7 @@ public class TrajectoryConstructor {
     public static List<Point> construct(Point target) {
         ArrayList<Point> list = new ArrayList<>();
 
-        for (int i = KOZSetpoints2.size(); i >= 0; i--) {
+        for (int i = KOZSetpoints2.size() - 1; i >= 0; i--) {
             if (target.getY() > KOZSetpoints2.get(i).get().getY()) { break; }
             list.add(KOZSetpoints2.get(i).shift(0.0, 0.18, 0.0));
             list.add(KOZSetpoints2.get(i).shift(0.0, -0.18, 0.0));
