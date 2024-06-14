@@ -11,9 +11,9 @@ import jp.jaxa.iss.kibo.rpc.api.KiboRpcService;
 public class YourService extends KiboRpcService {
     @Override
     protected void runPlan1(){
-        // write your plan 1 here
         api.startMission();
 
+        // idk why artrobee didn't move to astronaut
         Point pos = new Point(11.143, -6.7607, 4.9654);
         Quaternion dir = new Quaternion(0f, 0f, -0.707f, 0.707f);
         api.moveTo(pos, dir, true);
