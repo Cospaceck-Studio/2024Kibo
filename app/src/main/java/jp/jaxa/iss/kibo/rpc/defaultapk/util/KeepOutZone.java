@@ -1,5 +1,7 @@
 package jp.jaxa.iss.kibo.rpc.defaultapk.util;
 
+import java.util.Arrays;
+import java.util.List;
 
 import gov.nasa.arc.astrobee.types.Point;
 
@@ -19,6 +21,8 @@ public class KeepOutZone {
             new Cuboid(10.25, -7.4, 4.97, 10.87, -7.35, 5.62)
     );
 
+    public static final List<KeepOutZone> KOZs = Arrays.asList(KOZ_1, KOZ_2, KOZ_3);
+
     public final Cuboid zone1;
     public final Cuboid zone2;
     public final double yPos;
@@ -30,10 +34,10 @@ public class KeepOutZone {
         this.zone2 = zone2;
         this.yPos = zone1.getMidPoint().getY();
 
-        double safe1X = KOZ_1.zone1.getMidPoint().getX();
-        double safe1Z = KOZ_1.zone2.getMidPoint().getZ();
-        double safe2X = KOZ_1.zone2.getMidPoint().getX();
-        double safe2Z = KOZ_1.zone1.getMidPoint().getZ();
+        double safe1X = zone1.getMidPoint().getX();
+        double safe1Z = zone2.getMidPoint().getZ();
+        double safe2X = zone2.getMidPoint().getX();
+        double safe2Z = zone1.getMidPoint().getZ();
 
         this.safe1 = new Point(safe1X, this.yPos, safe1Z);
         this.safe2 = new Point(safe2X, this.yPos, safe2Z);

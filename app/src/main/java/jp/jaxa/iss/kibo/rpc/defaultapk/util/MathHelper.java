@@ -10,6 +10,26 @@ public final class MathHelper {
         return new Point(x, y, z);
     }
 
+    public static double distanceToSqr(Point p, Point q) {
+        double dx = p.getX() - q.getX();
+        double dy = p.getY() - q.getY();
+        double dz = p.getZ() - q.getZ();
+        return dx * dx + dy * dy + dz * dz;
+    }
+
+    public static double distanceTo(Point p, Point q) {
+        return Math.sqrt(distanceToSqr(p, q));
+    }
+
+    public static boolean isBetween(double d, double a, double b) {
+        if (a == b) return a == d;
+        if (a < b) {
+            return a <= d && d <= b;
+        } else {
+            return b <= d && d <= a;
+        }
+    }
+
     public static Point shift(Point p, double x, double y, double z) {
         return new Point(p.getX() + x, p.getY() + y, p.getZ() + z);
     }
