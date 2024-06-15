@@ -1,14 +1,11 @@
-package jp.jaxa.iss.kibo.rpc.defaultapk;
-
-import java.util.Arrays;
-import java.util.List;
+package jp.jaxa.iss.kibo.rpc.defaultapk.constant;
 
 import gov.nasa.arc.astrobee.types.Point;
 
 public class FieldPositions {
     private final Point point;
 
-    FieldPositions(double x, double y, double z) {
+    public FieldPositions(double x, double y, double z) {
         this.point = new Point(x, y, z);
     }
 
